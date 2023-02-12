@@ -1,5 +1,5 @@
 import { useState } from "react";
-function Maintasks_Session({title3}){
+function Maintasks_Session({title3,todo}){
     const today=new Date();
     const days=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
     const months=['january','february','march','april','may','june','july','august','september','october','november','december'];
@@ -10,8 +10,14 @@ function Maintasks_Session({title3}){
             <p className="main-task_p2">1 of 3 completed</p>
             <p className="main-task_p3">Main tasks</p>
             <div className="main-task_div1">
-                {title3.map((item,index)=>{
-                       return( <div style={{border:'1px solid gray',width:'80px'}} key={index}>{item}</div>)
+                {/* {title3.map((item,index)=>{ */}
+                {console.log(todo)}
+                {todo.map((item,index)=>{
+                    console.log(item.main);
+                    {if(item.main)
+                        return <div style={{border:'1px solid gray',width:'80px'}} key={index}>{item.title}</div>
+                    }
+                    //   {item.main?return <div style={{border:'1px solid gray',width:'80px'}} key={index}>{item.title}</div>:''}
                 })}
             </div>
         </div>
